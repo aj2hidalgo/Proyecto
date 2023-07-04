@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background-color: #222831;
+}
+
+.container {
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: linear-gradient(to bottom,#222831,#393E46);
+}
+
+section .color{
+    position: absolute;
+    filter: blur(150px);
+}
+
+section .color:nth-child(1) {
+    top: -350px;
+    width: 600px;
+    height: 600px;
+    background-color: #393E46;
+}
+
+section .color:nth-child(2) {
+    bottom: -150px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background-color: #0128b6;
+}
+
+section .color:nth-child(3) {
+    bottom: 50px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    background-color: #0092CA;
+}
+
+section .box{
+    position: relative;
+}
+
+section .box .square {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    animation: animate 8s linear infinite;
+    animation-delay: calc(-1s * val(--i));
+    opacity: 0;
+}
+
+section .box .square:nth-child(1) {
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * val(--i));
+    opacity: 0;
+}
+
+@keyframes animate {
+    0%, 100% {transform: translateY(-30px);}
+    50% {transform: translateY(50px);
+        opacity: 1}
+}
+
+section .box .square:nth-child(1) {
+    top: -50px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    animation: animate 15s linear infinite;
+    animation-delay: calc(-1s * val(--i));
+    opacity: 0;
+}
+
+section .box .square:nth-child(2) {
+    top: 150px;
+    left: -80px;
+    width: 150px;
+    height: 150px;
+    z-index: 2;
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * val(--i));
+    opacity: 0;
+}
+
+section .box .square:nth-child(3) {
+    bottom: 50px;
+    right: -60px;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+    animation: animate 8s linear infinite;
+    animation-delay: calc(-1s * val(--i));
+    opacity: 0;
+}
+
+section .box .square:nth-child(4) {
+    bottom: -80px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(-1s * val(--i));
+    opacity: 0;
+}
+
+section .box .square:nth-child(5) {
+    top: -80px;
+    left: 140px;
+    width: 60px;
+    height: 60px;
+    animation: animate 12s linear infinite;
+    animation-delay: calc(-1s * val(--i));
+    opacity: 0;
+}
+
+section .container {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+
+section .container form {
+    position: relative;
+    padding: 20px;
+    transition: transform 0.5s ease-in-out;
+    transform: translateY();
+}
+
+section .container .from h2 {
+    position: relative;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-left: 26%;
+}
+
+
+section .container .from .inputBox input {
+    padding: 10px 20px;
+    margin: 2px;
+}
+
+section .container  from  .inputBox input::placeholder {
+    color: #fff;
+}
+
+section .container .from .inputBox input[type="submit"] {
+    background: #fff;
+    color: #666;
+    max-width: 100px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+section .container .from .forget {
+    margin-top: 5px;
+    color: #fff;
+}
+
+section .container form .forget a {
+    color: #fff;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+section .container form .forget a:hover {
+    color: #0092CA;
+}
+
+
+
+.inputBox {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 190px;
+}
+
+.inputBox input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.inputBox input:focus,
+.inputBox input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
+}
+
+.inputBox label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+}
+
+.inputBox label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    color: #fff;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.inputBox input:focus+label span,
+.inputBox input:valid+label span {
+    color: lightblue;
+    transform: translateY(-30px);
+}
+
+.btn {
+    position: relative;
+    cursor: pointer;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 62px;
+    display: inline-block;
+    border-radius: 6em;
+    transition: all .2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px lightblue;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn::after {
+    background-color: lightblue;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.wave-group {
+    position: relative;
+    margin: 20px;
+}
+
+.wave-group .input {
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .input:focus {
+    outline: none;
+    border-bottom-color: lightblue;
+}
+
+.wave-group .label {
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 6px;
+    display: flex;
+}
+
+.wave-group .label-char {
+    transition: 0.1s ease all;
+    transition-delay: calc(var(--index) * 30ms);
+}
+
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+    transform: translateY(-20px);
+    font-size: 18px;
+    color: lightblue;
+}
+
+.wave-group .bar {
+    position: relative;
+    display: block;
+    width: 200px;
+}
+
+.wave-group .bar:before {
+    left: 50%;
+}
+
+.wave-group .bar:after {
+    right: 50%;
+}
+
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+    width: 50%;
+}
+
+
