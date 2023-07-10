@@ -1,0 +1,15 @@
+
+.div_container_main {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    align-items: center;
+}
+
+.div_logo {
+    width: 50%;
+}
+
+.div_login{
+    width: 50%;
+}
